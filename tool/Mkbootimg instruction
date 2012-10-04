@@ -1,0 +1,14 @@
+#Huawei MediaPad
+
+ ./unpack-bootimg.pl boot.img
+
+#copy new build kernel (zImage) from kernel dir to with mkbootimg binary!
+#place unpacked ramdisk (boot.img-ramdisk.cpio.gz) of kernel to dir with mkbootimg binary!
+
+./mkbootimg --cmdline "console=console=ttyHSL0,115200,n8 androidboot.hardware=hws7300u vmalloc=578M kgsl.ptcount=16" --base 0x40300000 --kernel ./zImage --ramdisk ./boot.img-ramdisk.cpio.gz -o boot_new.img
+
+#go to dir make a kernel and type:
+
+find -name '*.ko' -exec cp -av {} /%userdir to copy modules% \;
+
+#userdir need to create before it exec
